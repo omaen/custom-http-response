@@ -8,7 +8,13 @@ def index():
     text_output = os.getenv('TEXT_OUTPUT', 'Hello, World!')
     text_color = os.getenv('TEXT_COLOR', 'Hello, World!')
     background_color = os.getenv('BACKGROUND_COLOR', 'white')
-    return render_template('index.html', text_output=text_output, text_color=text_color, background_color=background_color)
+    hostname = os.getenv('HOSTNAME', 'undefined')
+
+    return render_template('index.html',
+                           text_output=text_output,
+                           text_color=text_color,
+                           background_color=background_color,
+                           hostname=hostname)
 
 
 if __name__ == '__main__':
